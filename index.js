@@ -4,14 +4,14 @@ const port = process.env.PORT || 5003;
 const app = express();
 const bodyParser = require("body-parser")
 
-mongoose.connect(
-  "mongodb+srv://BlogUser:jAVhPqR9YORwjwXW@cluster0-fc8do.gcp.mongodb.net/BlogDB?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  }
-);
+// mongoose.connect(
+//   "mongodb+srv://BlogUser:jAVhPqR9YORwjwXW@cluster0-fc8do.gcp.mongodb.net/BlogDB?retryWrites=true&w=majority",
+//   {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//   }
+// );
 
 // mongoose.connect(
 //   "mongodb+srv://oladosutayo:oladosutayo@cluster0.0fdvb.mongodb.net/blogDB?retryWrites=true&w=majority",
@@ -21,11 +21,11 @@ mongoose.connect(
 //     useUnifiedTopology: true,
 //   }
 // );
-// mongoose.connect("mongodb://localhost:27017/Spidium", {
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-//   useUnifiedTopology: true
-// });
+mongoose.connect("mongodb://localhost:27017/Spidium", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+});
 
 const connection = mongoose.connection;
 connection.once("open", () => {

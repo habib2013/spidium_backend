@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Nov 16 2020 20:03:05 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* index.js
+
+
+Created files:
+* .autogit/autogit.json
+
+
+Deleted files:
+
+
+Renamed files:

@@ -31,6 +31,7 @@ router.route("/checkusername/:username").get((req, res) => {
 
 router.route("/login").post((req, res) => {
   User.findOne({ username: req.body.username }, (err, result) => {
+
     if (err) return res.status(500).json({ msg: err });
     if (result === null) {
       return res.status(403).json("Username incorrect");
@@ -51,11 +52,16 @@ router.route("/login").post((req, res) => {
 
 router.route("/register").post((req, res) => {
   console.log("inside the register");
+const Susername = req.body.username;
+const loweCaseUserName = username.toLowerCase();
+
+ 
   const user = new User({
-    username: req.body.username,
+    username: loweCaseUserName,
     password: req.body.password,
     email: req.body.email,
   });
+  console.log(loweCaseUserName);
   user
     .save()
     .then(() => {

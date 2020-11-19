@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Thu Nov 19 2020 13:19:11 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* models/blogpost.model.js
+* routes/blogpost.js
+
+
+Created files:
+* .autogit/logs/log-19-10-2020-12-53-28.txt
+
+
+Deleted files:
+
+
+Renamed files:

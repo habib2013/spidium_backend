@@ -64,6 +64,7 @@ router.route("/Add").post(middleware.checkToken, (req, res) => {
     username: req.decoded.username,
     title: req.body.title,
     body: req.body.body,  
+    
     readTime: req.body.readTime,
     datePublished: req.body.datePublished,
     category: req.body.category

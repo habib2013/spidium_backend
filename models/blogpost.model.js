@@ -6,7 +6,7 @@ const BlogPost = Schema({
   title: String,
   body: String,
 
-  readTime: Number,
+  readTime: String,
   datePublished: String,
   category: String,
 

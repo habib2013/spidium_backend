@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Fri Nov 20 2020 13:42:16 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* models/blogpost.model.js
+* routes/blogpost.js
+
+
+Created files:
+* .autogit/logs/log-20-10-2020-9-33-57.txt
+* uploads/5fb7a57f44482d23ecddfc9f.jpg
+* uploads/oladosu99.jpg
+
+
+Deleted files:
+
+
+Renamed files:

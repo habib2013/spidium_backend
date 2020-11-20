@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Nov 19 2020 13:49:17 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* routes/user.js
+
+
+Created files:
+* .autogit/logs/log-19-10-2020-13-19-11.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -53,7 +53,7 @@ router.route("/login").post((req, res) => {
 router.route("/register").post((req, res) => {
   console.log("inside the register");
 const Susername = req.body.username;
-const loweCaseUserName = username.toLowerCase();
+const loweCaseUserName = Susername.toLowerCase();
 
  
   const user = new User({

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const BlogPost = require("../models/blogpost.model");
 const middleware = require("../middleware");
+
 const multer  = require('multer');
 
 const storage = multer.diskStorage({
@@ -115,8 +116,9 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
   });
 
   router.route('/like').put(middleware.checkToken,(req,res) => {
+    console.log(req.decoded._id);
     BlogPost.findByIdAndUpdate(req.body.postId,{
-      $push: {likes: '5fb669e2484567236c4ab76e'}
+      $push: {likes: req.decoded._id}
     },{
       new: true
     }
@@ -133,8 +135,10 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
 
   router.route('/dislike').put(middleware.checkToken,(req,res) => {
+    console.log(req.decoded.username);
     BlogPost.findByIdAndUpdate(req.body.postId,{
-      $pull: {likes: '5fb669e2484567236c4ab76e'}
+      $pull: {likes: req.decoded._id}
+      
     },{
       new: true
     }

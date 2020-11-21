@@ -116,7 +116,7 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
   router.route('/like').put(middleware.checkToken,(req,res) => {
     BlogPost.findByIdAndUpdate(req.body.postId,{
-      $push: {likes: req.user._id}
+      $push: {likes: '5fb669e2484567236c4ab76e'}
     },{
       new: true
     }
@@ -134,7 +134,7 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
   router.route('/dislike').put(middleware.checkToken,(req,res) => {
     BlogPost.findByIdAndUpdate(req.body.postId,{
-      $pull: {likes: req.user._id}
+      $pull: {likes: '5fb669e2484567236c4ab76e'}
     },{
       new: true
     }

@@ -15,7 +15,8 @@ const BlogPost = Schema({
     type: String,
     default: "",
   },
-  likes: [{type:ObjectId,ref: "User"}],
+  likes: [{ type: Schema.Types.ObjectId,
+    ref: 'User'}],
   share: {type:Number,default: 0},
   comment: {type:Number,default: 0},
 });

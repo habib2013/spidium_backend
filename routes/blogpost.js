@@ -64,7 +64,7 @@ router.route("/Add").post(middleware.checkToken, (req, res) => {
     username: req.decoded.username,
     title: req.body.title,
     body: req.body.body,  
-    
+
     readTime: req.body.readTime,
     datePublished: req.body.datePublished,
     category: req.body.category
@@ -112,6 +112,8 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
        return res.status(200).json({success: true,data: result})
     })
 
-  })
+  });
+
+  router.route()
 
 module.exports = router;

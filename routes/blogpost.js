@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const BlogPost = require("../models/blogpost.model");
+const User = require("../models/users.model");
 const middleware = require("../middleware");
 
 const multer  = require('multer');
@@ -117,6 +118,7 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
   router.route('/like').put(middleware.checkToken,(req,res) => {
     console.log(req.decoded._id);
+    // const userId = User.find({$text: {$search: term}})
     BlogPost.findByIdAndUpdate(req.body.postId,{
       $push: {likes: req.decoded._id}
     },{

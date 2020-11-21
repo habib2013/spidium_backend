@@ -117,30 +117,30 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
   });
 
   router.route('/like').put(middleware.checkToken,(req,res) => {
-    console.log(req.decoded._id);
-
+ 
      const userId = User.findOne({username: req.decoded.username},(err,result) => {
         if(err){
           return res.status(400).json({success:false,error: err})
         }
       return res.status(200).json(result['_id'])
      })
-    
+    //  var  newUserId = userId.toString();
+    console.log(userId)
 
-    BlogPost.findByIdAndUpdate(req.body.postId,{
-      $push: {likes: userId}
-    },{
-      new: true
-    }
+    // BlogPost.findByIdAndUpdate(req.body.postId,{
+    //   $push: {likes: '5fb91cb79b57bb28788bae58'}
+    // },{
+    //   new: true
+    // }
       
-      ).exec((err,result) => {
-        if(err) {
-          return res.status(422).json({'error': err})
-        }
-        else {
-          res.json({success: true, data:result})
-        }
-      })
+    //   ).exec((err,result) => {
+    //     if(err) {
+    //       return res.status(422).json({'error': err})
+    //     }
+    //     else {
+    //       res.json({success: true, data:result})
+    //     }
+    //   })
   })
 
 

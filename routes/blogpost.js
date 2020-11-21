@@ -114,6 +114,39 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
   });
 
-  router.route()
+  router.route('/like').put(middleware.checkToken,(req,res) => {
+    BlogPost.findByIdAndUpdate(req.body.postId,{
+      $push: {likes: req.user._id}
+    },{
+      new: true
+    }
+      
+      ).exec((err,result) => {
+        if(err) {
+          return res.status(422).json({'error': err})
+        }
+        else {
+          res.json({success: true, data:result})
+        }
+      })
+  })
+
+
+  router.route('/dislike').put(middleware.checkToken,(req,res) => {
+    BlogPost.findByIdAndUpdate(req.body.postId,{
+      $pull: {likes: req.user._id}
+    },{
+      new: true
+    }
+      
+      ).exec((err,result) => {
+        if(err) {
+          return res.status(422).json({'error': er})
+        }
+        else {
+          res.json(result)
+        }
+      })
+  })
 
 module.exports = router;

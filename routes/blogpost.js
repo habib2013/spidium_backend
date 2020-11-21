@@ -118,9 +118,17 @@ router.route('/getOtherBlog').get(middleware.checkToken,(req,res) => {
 
   router.route('/like').put(middleware.checkToken,(req,res) => {
     console.log(req.decoded._id);
-    // const userId = User.find({$text: {$search: term}})
+
+     const userId = User.findOne({username: req.decoded.username},(err,result) => {
+        if(err){
+          return res.status(400).json({success:false,error: err})
+        }
+      return res.status(200).json(result['_id'])
+     })
+    
+
     BlogPost.findByIdAndUpdate(req.body.postId,{
-      $push: {likes: req.decoded._id}
+      $push: {likes: userId}
     },{
       new: true
     }

@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun Nov 29 2020 17:02:03 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* routes/blogpost.js
+
+
+Created files:
+* .autogit/logs/log-21-10-2020-18-30-37.txt
+
+
+Deleted files:
+
+
+Renamed files:
